@@ -30,7 +30,7 @@ export default function Signup() {
 
 
     return (
-        <>
+        <div>
            <Card>
                <Card.Body>
                    <h2 className="text-center mb-4">Sign up</h2>
@@ -50,13 +50,13 @@ export default function Signup() {
                        </Form.Group>
                        <Button disabled={loading} className="w-100" type="submit">
                         Sign up
-                        </Button>
+                       </Button>
                    </Form>
                </Card.Body>
            </Card>
            <div className="w-100 text-center mt-2">
                Already have an account? Log in
            </div>
-        </>
+        </div>
     )
 }
