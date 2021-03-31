@@ -12,7 +12,7 @@ export default function AddFolderButton() {
         setOpen(true)
     }
 
-    function closeModel(){
+    function closeModal(){
         setOpen(false)
     }
 
@@ -30,7 +30,7 @@ export default function AddFolderButton() {
         <Button onClick={openModal} variant="outline-success" size="sm">
             <FontAwesomeIcon icon={ faFolderPlus } />
         </Button>
-        <Modal show={open} onHide={closeModel}>
+        <Modal show={open} onHide={closeModal}>
             <Form onSubmit={handleSubmit}>
                 <Modal.Body>
                     <Form.Group>
@@ -39,7 +39,7 @@ export default function AddFolderButton() {
                     <Form.Control type="text" required value={name} onChange={e => setName(e.target.value)} />
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={closeModel} >Close</Button>
+                    <Button variant="secondary" onClick={closeModal} >Close</Button>
                     <Button variant="success" type="submit">Close</Button>
                 </Modal.Footer>
             </Form>
