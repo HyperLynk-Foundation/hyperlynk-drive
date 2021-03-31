@@ -1,6 +1,8 @@
 
+import { faWindowRestore } from "@fortawesome/free-solid-svg-icons"
 import firebase from "firebase/app"
 import "firebase/auth"
+import "firebase/firestore"
 
 const app = firebase.initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -12,5 +14,9 @@ const app = firebase.initializeApp({
   appId: process.env.REACT_APP_FIREBASE_APP_ID
 })
 
+export const database = {
+  folders: faWindowRestore.collection('folders'),
+  files: faWindowRestore.collection('files')
+}
 export const auth = app.auth()
 export default app
