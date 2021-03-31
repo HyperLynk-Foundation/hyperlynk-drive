@@ -5,7 +5,7 @@ import { faFolderPlus } from "@fortawesome/free-solid-svg-icons"
 import { database } from "../../firebase"
 import { useAuth } from '../../contexts/AuthContext'
 
-export default function AddFolderButton() {
+export default function AddFolderButton({ currentFolder }) {
     const [open, setOpen] = useState(false)
     const [name, setName] = useState('')
     const { currentUser } = useAuth()
@@ -21,12 +21,14 @@ export default function AddFolderButton() {
     function handleSubmit(e) {
         e.preventDefault()
 
+        if(currentFolder == null) return
+
         database.folders.add({
             name: name,
-            //parentId,
+            parentId: currentFolder.id,
             userId: currentUser.id,
             //path,
-            //createdAt
+            createdAt: database.getCurrentTimestamp()
         })
         setName("")
         closeModal()
