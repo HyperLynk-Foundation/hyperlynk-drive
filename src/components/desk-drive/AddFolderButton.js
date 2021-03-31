@@ -3,10 +3,12 @@ import { Button, Form, Modal } from 'react-bootstrap'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFolderPlus } from "@fortawesome/free-solid-svg-icons"
 import { database } from "../../firebase"
+import { useAuth } from '../../contexts/AuthContext'
 
 export default function AddFolderButton() {
     const [open, setOpen] = useState(false)
     const [name, setName] = useState('')
+    const { currentUser } = useAuth()
 
     function openModal() {
         setOpen(true)
@@ -21,6 +23,10 @@ export default function AddFolderButton() {
 
         database.folders.add({
             name: name,
+            //parentId,
+            userId: currentUser.id,
+            //path,
+            //createdAt
         })
         setName("")
         closeModal()
