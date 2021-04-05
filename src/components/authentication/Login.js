@@ -12,20 +12,20 @@ export default function Login() {
     const [loading, setLoading ] = useState(false)
     const history = useHistory()
 
-    async function handleSubmit(e) {
+    async function handleSubmit(e){
         e.preventDefault()
 
         try {
             setError('')
-            setLoading(true)
+            setLoading(true) 
             await login(emailRef.current.value, passwordRef.current.value)
-            history.push("/")
+            setLoading(false)  
+            history.push('/home')
         } catch {
-            setError('failed to sign in')
+            setLoading(false)  
+            setError('Failed to login')
         }
-
-        setLoading(false)
-    }
+   }
 
 
 
