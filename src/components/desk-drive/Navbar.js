@@ -7,7 +7,7 @@ export default function NavbarComponent() {
     return (
         <Navbar bg="light" expand="sm" >
             <Navbar.Brand as={Link} to="/">
-                <img src={newlifestorelogo} width="300" />
+                <img src={newlifestorelogo} width="300" alt="Lifestore" />
             </Navbar.Brand>
             <Nav>
                 <Nav.Link as={Link} to="/user">
