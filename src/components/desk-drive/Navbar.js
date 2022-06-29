@@ -5,13 +5,13 @@ import cloud from './cloud .png'
 
 export default function NavbarComponent() {
     return (
-        <Navbar bg="light" expand="sm" >
+        <Navbar bg="white" expand="sm" >
             <Navbar.Brand as={Link} to="/">
                 <img src={cloud } width="300" alt="cloud cf" />
             </Navbar.Brand>
             <Nav>
                 <Nav.Link as={Link} to="/user">
-                    DeskPass
+                    CloudPass
                 </Nav.Link>
             </Nav>
         </Navbar>
